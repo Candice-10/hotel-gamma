@@ -83,3 +83,27 @@ function get_all_photo_by_accommodation(int $id): array {
 
     return $stmt->fetchAll();
 }
+
+
+
+function get_all_rows("price"): array {
+    global $connection;
+
+    //$query = "SELECT * FROM room ORDER BY size DESC LIMIT 0,3";
+    //DESC ordre décroissant
+
+    $query = "SELECT accommodation.*,type.name as type,category.name as category FROM accommodation,type,category WHERE (accommodation.category_id=category.id AND accommodation.type_id=type.id) ORDER BY size DESC LIMIT 0,3";
+    //SELECT * = sélectionner tous les champs
+
+    $stmt = $connection->prepare($query);
+    //$stmt->bindValue(":id", $id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+
+
+
+
+
