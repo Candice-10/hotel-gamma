@@ -24,7 +24,9 @@ get_header();
     <form class="form-search">
         <div class="form-group">
             <label for="search-type">Type</label>
+
             <!-- TODO: Afficher dynamiquement la liste des types de logements -->
+
             <select name="type_id" id="search-type">
                 <?php foreach ($types as $type) : ?>
                     <option><?= $type["name"]; ?></option>
@@ -70,7 +72,12 @@ get_header();
     <div class="grid grid-rooms">
 
         <!-- TODO: Afficher dynamiquement les données des logements -->
+<<<<<<< HEAD
         <?php foreach($bigrooms as $accommodations): ?>
+=======
+
+        <?php foreach($accommodations as $accommodation): ?>
+>>>>>>> d1eccdd9c04ac4c98c6d64878acd9e81011967ae
             <article>
                 <header>
                     <img src="uploads/<?= $accommodations["photo"]; ?>" class="img-responsive" alt="<?= $accommodations["type"]." ".$accommodations["category"]; ?>">
@@ -94,4 +101,73 @@ get_header();
     </div>
 </section>
 
+<<<<<<< HEAD
 <?php get_footer();
+=======
+<form action="#contact__form" method="POST" id="contact__form" class="row">
+
+                <div class="contact__content flex__container around">
+
+                    <div class="margg">
+                        <label for="name" class="hdn__text">Nom</label>
+                        <input type="text" name="name" id="name" minlength="2" maxlength="25" required placeholder="Nom" class="col-l-6">
+                    </div>
+
+                    <div>
+                        <label for="forname"class="hdn__text">Prénom</label>
+                        <input type="text" name="forname" id="forname" minlength="2" maxlength="25" required placeholder="Prénom"class="col-l-6">
+                    </div>
+
+                    <div class="margg">
+                        <label for="mail"class="hdn__text">Email</label>
+                        <input type="email" name="mail" id="mail" placeholder="Email" required class="col-l-6">
+                    </div>
+
+                    <div>
+                        <label for="code postal"class="hdn__text">Code postal</label>
+                        <input type="number" name="code_postal" id="code postal"  required placeholder="Code postal" class="col-l-6">
+                    </div>
+
+                    <label for="mail" class="hdn__text">Message</label>
+                    <textarea class="textarea" name="message" id="message" class="col-l-12" placeholder="Message"></textarea>
+
+                </div>
+
+                <div class="rox flex__container between align-items">
+                    <button type="submit" class="btn btn-1 col-l-2 btn__contact">Me contacter</button>
+                </div>
+
+                <?php
+                if (isset($_POST["message"])) {
+                    // Stockage des données du formulaire dans des variables
+                    $firstname = $_POST["forname"];
+                    $lastname = $_POST["name"];
+                    $email = $_POST["mail"];
+                    $zipcode = $_POST["code_postal"];
+                    $message = $_POST["message"];
+
+                    $headers = "From: " . $email . "\r\n" .
+                        'Reply-To: ' . $email . "\r\n" .
+                        'X-Mailer: PHP/' . phpversion();
+                    $content = "Vous avez reçu un message de $firstname $lastname.";
+                    $content .= "<br>";
+                    $content .= "<ul>";
+                    $content .= "<li>Email : $email</li>";
+                    $content .= "<li>Code postal : $zipcode</li>";
+                    $content .= "</ul>";
+                    $content .= "Message :</br>";
+                    $content .= $message;
+                    $sent = mail("alison.lepolles18@gmail.com", "Formulaire de contact", $content, $headers);
+                    if ($sent) {
+                        echo "Message envoyé";
+                    } else {
+                        echo "Erreur lors de l'envoi du message";
+                    }
+                }
+                ?>
+
+            </form>
+
+
+<?php get_footer(); ?>
+>>>>>>> d1eccdd9c04ac4c98c6d64878acd9e81011967ae
