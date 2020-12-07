@@ -230,3 +230,121 @@ ul.room-features {
 .room-content .room-description .room-description-content p {
     text-align: justify;
 }
+
+/* FORMULAIRE */
+
+
+.hdn__text{
+    font-size: 0;
+    margin: 0cm;
+}
+
+.contact{
+    background-color: var(--grey);
+    height: 911px;
+}
+
+
+.letter__contact{
+    color: var(--orange);
+    font-size: 18.75em;
+    text-transform: uppercase;
+    position: absolute;
+    top : 80px;
+    left: 113px;
+    font-family: 'Gotu', sans-serif;
+    margin: 0;
+}
+
+.bigtitle__contact{
+    position: absolute;
+    top: 230px;
+
+    text-transform: uppercase;
+    font-size: 3.75em;
+    font-family: 'Gotu', sans-serif;
+    margin: 0;
+}
+
+.lesstitle__contact{
+    position: absolute;
+    top: 190px;
+
+    text-transform: uppercase;
+    font-size: 1.875em;
+    font-family: 'Gotu', sans-serif;
+    margin: 0;
+}
+
+.logo-fond__contact{
+    position: relative;
+
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.upp{
+    text-transform: uppercase;
+}
+
+.contact__content{
+    padding-bottom: 80px;
+}
+
+.contact__content{
+    padding-bottom: 16px;
+}
+
+.contact__content ::placeholder{
+    color: var(--dark-color);
+    font-size: .75em;
+}
+
+.contact__content input{
+    border: 1px solid var(--orange);
+    height: 30px;
+    margin-bottom: 10px;
+
+    padding-left: 10px;
+    
+}
+
+.contact__content textarea{
+    border: 1px solid var(--orange);
+    height: 150px;
+    
+    resize: none; 
+
+    padding: 10px 10px;
+}
+
+::placeholder{
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75em;
+}
+
+.contact figcaption{
+    font-family: 'Raleway', sans-serif;
+}
+
+.marg__content{
+    margin-top: 70px;
+}
+
+.asterix{
+    font-size: 0.75em;
+}
+
+.margg{
+    margin-right: 10px;
+}
+
+.contact figure{
+    margin: 0;
+}
+
+.textarea{
+    width: 955px;
+}
+
